@@ -1,4 +1,4 @@
-function Prey(pos, width, height){
+function Predator(pos, width, height){
     this.pos = pos;
     this.width = width;
     this.height = height

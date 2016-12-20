@@ -15,8 +15,8 @@ function Game(width, height) {
     this.popsize = 50;
     this.time = 0;
     this.food = new Food();
-    this.preys = []
-    this.n_prey = 1;
+    this.predators = []
+    this.n_predator = 1;
 
     this.matingPool = [];
 
@@ -25,9 +25,9 @@ function Game(width, height) {
         for (var i = 0; i < this.popsize; i++) {
             this.amebas[i] = new Ameba();
         }
-        // Create Preys
-        for (var i = 0; i < this.n_prey; i++) {
-            this.preys[i] = new Prey(createVector(width / 2, random(100)),
+        // Create Predators
+        for (var i = 0; i < this.n_predator; i++) {
+            this.predators[i] = new Predator(createVector(width / 2, random(100)),
                 15,
                 this.wallLength);
         }
@@ -39,12 +39,12 @@ function Game(width, height) {
     }
 
     this.isEatten = function (pos) {
-        for (var i = 0; i < this.n_prey; i++) {
+        for (var i = 0; i < this.n_predator; i++) {
 
-            if (pos.x >= this.preys[i].pos.x &&
-                pos.y >= this.preys[i].pos.y &&
-                pos.x <= this.preys[i].pos.x + this.preys[i].width &&
-                pos.y <= this.preys[i].pos.y + this.preys[i].height) {
+            if (pos.x >= this.predators[i].pos.x &&
+                pos.y >= this.predators[i].pos.y &&
+                pos.x <= this.predators[i].pos.x + this.predators[i].width &&
+                pos.y <= this.predators[i].pos.y + this.predators[i].height) {
                 return true;
             }
 
@@ -67,9 +67,9 @@ function Game(width, height) {
         this.food.update();
         this.food.show();
 
-        for (var i = 0; i < this.n_prey; i++) {
-            this.preys[i].update();
-            this.preys[i].show();
+        for (var i = 0; i < this.n_predator; i++) {
+            this.predators[i].update();
+            this.predators[i].show();
         }
 
         for (var i = 0; i < this.amebas.length; i++) {
