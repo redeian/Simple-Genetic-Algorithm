@@ -1,6 +1,6 @@
 # Simple Genetic Algorithm
 
-This is a small Javascript project demonstrating genetic algorith.
+This is a small Javascript project demonstrating genetic algorithm. It is a quick weekend project. There are bugs and the code may not clearn right now.
 
 ![](genetic.gif)
 
